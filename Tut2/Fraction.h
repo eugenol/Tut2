@@ -14,6 +14,7 @@ public:
 	int getNumerator(void);
 	int getDenominator(void);
 	void setFraction(int num, int den);
+	void print();
 
 	Fraction operator+(Fraction &b);
 	Fraction operator-(Fraction &b);

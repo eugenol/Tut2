@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Fraction.h"
 
 using namespace std;
@@ -35,6 +36,22 @@ void Fraction::setFraction(int num, int den)
 {
 	setNumerator(num);
 	setDenominator(den);
+};
+
+void Fraction::print(void)
+{
+	int frac = numerator % denominator, whole = numerator / denominator;
+	if (whole > 0)
+	{
+		if (frac == 0)
+			cout << whole;
+		else
+			cout << whole << "  " << frac << "/" << denominator;
+	}
+	else if (numerator == 0)
+		cout << numerator;
+	else
+		cout << numerator << "/" << denominator;
 };
 
 Fraction Fraction::operator+(Fraction &b) 

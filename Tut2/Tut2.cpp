@@ -35,19 +35,19 @@ int main(int argc, char* argv[])
 
 	res = frac1 + frac2;
 	cout << endl << "Fraction 1 + Fraction 2 = ";
-	print(res);
+	res.print();
 
 	res = frac1 - frac2;
 	cout << endl << "Fraction 1 - Fraction 2 = ";
-	print(res);
+	res.print();
 
 	res = frac1*frac2;
 	cout << endl << "Fraction 1 * Fraction 2 = ";
-	print(res);
+	res.print();
 
 	res = frac1 / frac2;
 	cout << endl << "Fraction 1 / Fraction 2 = ";
-	print(res);
+	res.print();
 	cout << endl;
 
 	//read();
@@ -55,22 +55,6 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
-
-void print(Fraction temp)
-{
-	int frac = temp.getNumerator()%temp.getDenominator(), whole = temp.getNumerator() / temp.getDenominator();
-	if (whole > 0)
-	{
-	if (frac == 0)
-	cout << whole;
-	else
-		cout << whole << "  " << frac << "/" << temp.getDenominator();
-	}
-	else if (temp.getNumerator() == 0)
-		cout << temp.getNumerator();
-	else
-		cout << temp.getNumerator() << "/" << temp.getDenominator();
-};
 /*
 Fraction read(string temp)
 {
