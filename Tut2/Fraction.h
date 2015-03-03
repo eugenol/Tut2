@@ -15,12 +15,6 @@ public:
 	int getDenominator(void);
 	void setFraction(int num, int den);
 
-	Fraction add(const Fraction &b);
-	Fraction subtract(const Fraction &b);
-	Fraction multiply(const Fraction &b);
-	Fraction divide(const Fraction &b);
-
-	/*Trying out operator overloading*/
 	Fraction operator+(Fraction &b);
 	Fraction operator-(Fraction &b);
 	Fraction operator*(Fraction &b);

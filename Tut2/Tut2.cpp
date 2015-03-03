@@ -8,6 +8,7 @@
 using namespace std;
 
 void print(Fraction);
+//Fraction read(void);
 
 int main(int argc, char* argv[])
 {
@@ -30,23 +31,6 @@ int main(int argc, char* argv[])
 	cin >> temp;
 	frac2.setDenominator(temp);
 
-	res = frac1.add(frac2);
-	cout << endl << "Fraction 1 + Fraction 2 = ";
-	print(res);
-
-	res = frac1.subtract(frac2);
-	cout << endl << "Fraction 1 - Fraction 2 = ";
-	print(res);
-
-	res = frac1.multiply(frac2);
-	cout << endl << "Fraction 1 * Fraction 2 = ";
-	print(res);
-
-	res = frac1.divide(frac2);
-	cout << endl << "Fraction 1 / Fraction 2 = ";
-	print(res);
-	cout << endl;
-
 	//With operator overloading
 
 	res = frac1 + frac2;
@@ -65,6 +49,8 @@ int main(int argc, char* argv[])
 	cout << endl << "Fraction 1 / Fraction 2 = ";
 	print(res);
 	cout << endl;
+
+	//read();
 
 	return 0;
 }
@@ -85,3 +71,16 @@ void print(Fraction temp)
 	else
 		cout << temp.getNumerator() << "/" << temp.getDenominator();
 };
+/*
+Fraction read(string temp)
+{
+	Fraction b;
+	string temp;
+	int whole;
+
+	getline(cin,temp);
+
+	cout << temp;
+
+	return b;
+};*/
