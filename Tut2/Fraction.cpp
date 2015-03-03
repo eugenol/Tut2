@@ -1,3 +1,4 @@
+/*Fraction Class Definition*/
 #include <iostream>
 #include "Fraction.h"
 

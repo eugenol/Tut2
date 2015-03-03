@@ -8,7 +8,7 @@
 using namespace std;
 
 void print(Fraction);
-//Fraction read(void);
+Fraction read(void);
 
 int main(int argc, char* argv[])
 {
@@ -50,13 +50,13 @@ int main(int argc, char* argv[])
 	res.print();
 	cout << endl;
 
-	//read();
+	cout << "Enter mixed fraction";
+	res = read();
 
 	return 0;
 }
 
-/*
-Fraction read(string temp)
+Fraction read(void)
 {
 	Fraction b;
 	string temp;
@@ -64,7 +64,11 @@ Fraction read(string temp)
 
 	getline(cin,temp);
 
-	cout << temp;
+	if (temp.find(" ") != string::npos)
+	{
+		string temp2 = temp.substr(0, temp.find(" ") - 1);
+		cout << temp2;
+	}
 
 	return b;
-};*/
+};
