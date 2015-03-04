@@ -101,8 +101,17 @@ Fraction Fraction::operator/(Fraction &b)
 
 int Fraction::gcd(int a, int b)
 {
-	if (b == 0) return a;
-	else return gcd(b, a%b);
+	//if (b == 0) return a;
+	//else return gcd(b, a%b);
+
+	int temp=a;
+	while (b != 0)
+	{
+		temp = b;
+		b = a%b;
+		a = temp;
+	}
+	return temp;
 }
 
 Fraction Fraction::pretty(Fraction &Temp)
