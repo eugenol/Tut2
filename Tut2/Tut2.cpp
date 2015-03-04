@@ -60,7 +60,7 @@ Fraction read(void)
 {
 	Fraction b;
 	string temp;
-	int whole;
+//	int whole;
 
 	getline(cin,temp);
 

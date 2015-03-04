@@ -61,6 +61,7 @@ Fraction Fraction::operator+(Fraction &b)
 
 	result.numerator = numerator*b.denominator + denominator*b.numerator;
 	result.denominator = denominator*b.denominator;
+	result = pretty(result);
 
 	return result;
 };
@@ -71,6 +72,7 @@ Fraction Fraction::operator-(Fraction &b)
 
 	result.numerator = numerator*b.denominator - denominator*b.numerator;
 	result.denominator = denominator*b.denominator;
+	result = pretty(result);
 
 	return result;
 };
@@ -81,6 +83,7 @@ Fraction Fraction::operator*(Fraction &b)
 
 	result.numerator = numerator*b.numerator;
 	result.denominator = denominator*b.denominator;
+	result = pretty(result);
 
 	return result;
 };
@@ -91,6 +94,25 @@ Fraction Fraction::operator/(Fraction &b)
 
 	result.numerator = numerator*b.denominator;
 	result.denominator = denominator*b.numerator;
+	result = pretty(result);
 
 	return result;
 };
+
+int Fraction::gcd(int a, int b)
+{
+	if (b == 0) return a;
+	else return gcd(b, a%b);
+}
+
+Fraction Fraction::pretty(Fraction &Temp)
+{
+	int a = Temp.numerator, b = Temp.denominator;
+	int div = gcd(a, b);
+	Fraction retfrac;
+
+	retfrac.numerator = Temp.numerator / div;
+	retfrac.denominator = Temp.denominator / div;
+
+	return retfrac;
+}

@@ -82,12 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fraction.h" />
-    <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Fraction.cpp" />
-    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Tut2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

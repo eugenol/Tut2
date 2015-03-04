@@ -5,6 +5,9 @@ class Fraction {
 	int numerator;
 	int denominator;
 
+	int gcd(int a, int b);
+	Fraction pretty(Fraction &Temp);
+
 public:
 	Fraction();
 	~Fraction();
