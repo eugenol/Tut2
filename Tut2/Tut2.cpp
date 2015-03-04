@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	cout << "Enter the fraction 2: ";
 	frac2 = readfraction();
 
-	//With operator overloading
+	//run test cases with +,-,*,/ operators
 
 	res = frac1 + frac2;
 	cout << endl << "Fraction 1 + Fraction 2 = ";
@@ -51,13 +51,13 @@ Fraction readfraction(void)
 
 	getline(cin,temp);
 
-	if (temp.find(" ") != string::npos)
+	if (temp.find(" ") != string::npos) //Check if there is a space, if there is, then most likely a mixed fraction.
 	{
 		int pos = temp.find(" ");
-		string temp2 = temp.substr(0, pos);
+		string temp2 = temp.substr(0, pos); //read in whole number part
 		whole = atoi(temp2.c_str());
 
-		if (temp.find("/", pos + 1) != string::npos)
+		if (temp.find("/", pos + 1) != string::npos) // read in fraction part
 		{
 			int pos2 = temp.find("/", pos + 1);
 			temp2 = temp.substr(pos + 1, pos2);
@@ -70,9 +70,9 @@ Fraction readfraction(void)
 
 		}
 		else
-			b.setNumerator(whole);
+			b.setNumerator(whole); //in case there was no fraction
 	}
-	else if (temp.find("/") != string::npos)
+	else if (temp.find("/") != string::npos) //not a mixed fraction, fraction only
 	{
 			int pos = temp.find("/");
 			string temp2 = temp.substr(0, pos);
@@ -83,7 +83,7 @@ Fraction readfraction(void)
 			b.setNumerator(num);
 			b.setDenominator(den);
 	}
-	else
+	else //in case there is no fraction, read in whole number. 
 	{
 		num = atoi(temp.c_str());
 		b.setNumerator(num);

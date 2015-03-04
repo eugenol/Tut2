@@ -4,7 +4,7 @@
 
 using namespace std;
 
-	//Constructor
+//Constructor
 Fraction::Fraction() {
 	numerator = 0;
 	denominator = 1;
@@ -61,7 +61,7 @@ Fraction Fraction::operator+(Fraction &b)
 
 	result.numerator = numerator*b.denominator + denominator*b.numerator;
 	result.denominator = denominator*b.denominator;
-	result = pretty(result);
+	result = pretty(result); //neaten up the fraction
 
 	return result;
 };
@@ -72,7 +72,7 @@ Fraction Fraction::operator-(Fraction &b)
 
 	result.numerator = numerator*b.denominator - denominator*b.numerator;
 	result.denominator = denominator*b.denominator;
-	result = pretty(result);
+	result = pretty(result); //neaten up the fraction
 
 	return result;
 };
@@ -83,7 +83,7 @@ Fraction Fraction::operator*(Fraction &b)
 
 	result.numerator = numerator*b.numerator;
 	result.denominator = denominator*b.denominator;
-	result = pretty(result);
+	result = pretty(result); //neaten up the fraction
 
 	return result;
 };
@@ -94,12 +94,12 @@ Fraction Fraction::operator/(Fraction &b)
 
 	result.numerator = numerator*b.denominator;
 	result.denominator = denominator*b.numerator;
-	result = pretty(result);
+	result = pretty(result); //neaten up the fraction
 
 	return result;
 };
 
-int Fraction::gcd(int a, int b)
+int Fraction::gcd(int a, int b) //find the greatest common divisor, used in pretty to clean up the fractions
 {
 	//if (b == 0) return a;
 	//else return gcd(b, a%b);
@@ -114,12 +114,17 @@ int Fraction::gcd(int a, int b)
 	return temp;
 }
 
-Fraction Fraction::pretty(Fraction &Temp)
+Fraction Fraction::pretty(Fraction &Temp) // simplifies the fractions.
 {
-	int a = Temp.numerator, b = Temp.denominator;
-	int div = gcd(a, b);
 	Fraction retfrac;
 
+	int a = Temp.numerator, b = Temp.denominator;
+
+	a = a >= 0 ? a : -a;
+	b = b >= 0 ? b : -b;
+
+	int div = gcd(a, b);
+	
 	retfrac.numerator = Temp.numerator / div;
 	retfrac.denominator = Temp.denominator / div;
 
