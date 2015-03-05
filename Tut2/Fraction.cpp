@@ -42,7 +42,7 @@ void Fraction::setFraction(int num, int den)
 void Fraction::print(void)
 {
 	int frac = numerator % denominator, whole = numerator / denominator;
-	if (whole > 0)
+	if (whole != 0) //Mixed fraction
 	{
 		if (frac == 0)
 			cout << whole;
