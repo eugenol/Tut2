@@ -127,6 +127,12 @@ Fraction Fraction::pretty(Fraction &Temp) // simplifies the fractions.
 	
 	retfrac.numerator = Temp.numerator / div;
 	retfrac.denominator = Temp.denominator / div;
+	
+	if(retfrac.denominator < 0)
+	{
+		retfrac.numerator*=-1;
+		retfrac.denominator*=-1;
+	}
 
 	return retfrac;
 }
