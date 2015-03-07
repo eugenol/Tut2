@@ -86,7 +86,7 @@ Fraction readfraction(void)
 	else //in case there is no fraction, read in whole number. 
 	{
 		num = atoi(temp.c_str());
-		b.setNumerator(num);
+		b.setNumerator(num); // denominator is set to one in the constructor
 	}
 
 	return b;
