@@ -23,12 +23,12 @@ void Fraction::setDenominator(int den)
 	denominator = den;
 }
 
-int Fraction::getNumerator(void) 
+int Fraction::getNumerator() 
 {
 	return numerator;
 }
 
-int Fraction::getDenominator(void) 
+int Fraction::getDenominator() 
 {
 	return denominator;
 }
@@ -39,7 +39,7 @@ void Fraction::setFraction(int num, int den)
 	setDenominator(den);
 }
 
-void Fraction::print(void)
+void Fraction::print()
 {
 	int frac = numerator % denominator, whole = numerator / denominator;
 	if (whole != 0) //Mixed fraction
@@ -157,5 +157,30 @@ ostream &operator<<(ostream &os, const Fraction &b)
 }
 istream & operator>>(istream &is, Fraction &b)
 {
+	/*
+	int whole, numerator, denominator;
+	cin >> whole >> numerator >> denominator;
+	b.numerator = whole*denominator + numerator;
+	b.denominator = denominator;
+	*/
+	char slash = 0;
+	int whole = 0, num = 0, den = 1;
+	cin >> whole >> slash;
+	if (slash == '/')
+	{
+		cin >> den;
+		num = whole;
+	}
+	else if (slash == ' ')
+	{
+		cin >> num >> slash >> den;
+		num += whole;
+	}
+	else if (slash == '\n')
+		num = whole;
+
+	b.numerator = num;
+	b.denominator = den;
+
 	return is;
 }

@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 #include "Fraction.h"
-#include <cstdio> //Is this needed?
 
 using namespace std;
 
@@ -15,31 +14,33 @@ int main(int argc, char* argv[])
 	Fraction frac1, frac2, res;
 
 	cout << "Enter the fraction 1: ";
-	frac1 = readfraction();
+	//frac1 = readfraction();
+	cin >> frac1;
 
 	cout << "Enter the fraction 2: ";
-	frac2 = readfraction();
+	//frac2 = readfraction();
+	cin >> frac2;
 
 	//run test cases with +,-,*,/ operators
 
 	res = frac1 + frac2;
 	cout << endl << "Fraction 1 + Fraction 2 = ";
-	res.print();
+	//res.print();
 	cout << res;
 
 	res = frac1 - frac2;
 	cout << endl << "Fraction 1 - Fraction 2 = ";
-	res.print();
+	//res.print();
 	cout << res;
 
 	res = frac1*frac2;
 	cout << endl << "Fraction 1 * Fraction 2 = ";
-	res.print();
+	//res.print();
 	cout << res;
 
 	res = frac1 / frac2;
 	cout << endl << "Fraction 1 / Fraction 2 = ";
-	res.print();
+	//res.print();
 	cout << res;
 	cout << endl;
 
@@ -48,7 +49,7 @@ int main(int argc, char* argv[])
 
 
 
-Fraction readfraction(void)
+Fraction readfraction()
 {
 	Fraction b;
 	string temp;
@@ -60,15 +61,15 @@ Fraction readfraction(void)
 	{
 		int pos = temp.find(" ");
 		string temp2 = temp.substr(0, pos); //read in whole number part
-		whole = atoi(temp2.c_str());
+		whole = stoi(temp2);
 
 		if (temp.find("/", pos + 1) != string::npos) // read in fraction part
 		{
 			int pos2 = temp.find("/", pos + 1);
 			temp2 = temp.substr(pos + 1, pos2);
-			num = atoi(temp2.c_str());
+			num = stoi(temp2);
 			temp2 = temp.substr(pos2 + 1);
-			den = atoi(temp2.c_str());
+			num = stoi(temp2);
 
 			b.setNumerator(whole*den + num);
 			b.setDenominator(den);
@@ -81,16 +82,17 @@ Fraction readfraction(void)
 	{
 			int pos = temp.find("/");
 			string temp2 = temp.substr(0, pos);
-			num = atoi(temp2.c_str());
+			num = stoi(temp2);
 			temp2 = temp.substr(pos + 1);
-			den = atoi(temp2.c_str());
+			den = stoi(temp2);
+
 
 			b.setNumerator(num);
 			b.setDenominator(den);
 	}
 	else //in case there is no fraction, read in whole number. 
 	{
-		num = atoi(temp.c_str());
+		num = stoi(temp);
 		b.setNumerator(num); // denominator is set to one in the constructor
 	}
 

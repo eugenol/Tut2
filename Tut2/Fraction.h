@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-using namespace std; //Omission of this line was causing the errors!
+using namespace std; //Omission of this line was causing the errors! Some people say use std::ostream etc.. instead of using namespace std.
 
 class Fraction {
 private:
@@ -19,8 +19,8 @@ public:
 
 	void setNumerator(int num);
 	void setDenominator(int den);
-	int getNumerator(void);
-	int getDenominator(void);
+	int getNumerator();
+	int getDenominator();
 	void setFraction(int num, int den);
 	void print();
 
