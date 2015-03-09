@@ -25,22 +25,22 @@ int main(int argc, char* argv[])
 	res = frac1 + frac2;
 	cout << endl << "Fraction 1 + Fraction 2 = ";
 	res.print();
-	//cout << res;
+	cout << res;
 
 	res = frac1 - frac2;
 	cout << endl << "Fraction 1 - Fraction 2 = ";
 	res.print();
-	//cout << res;
+	cout << res;
 
 	res = frac1*frac2;
 	cout << endl << "Fraction 1 * Fraction 2 = ";
 	res.print();
-	//cout << res;
+	cout << res;
 
 	res = frac1 / frac2;
 	cout << endl << "Fraction 1 / Fraction 2 = ";
 	res.print();
-	//cout << res;
+	cout << res;
 	cout << endl;
 
 	return 0;

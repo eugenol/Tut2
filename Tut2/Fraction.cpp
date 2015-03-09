@@ -137,25 +137,25 @@ Fraction Fraction::pretty(Fraction &Temp) // simplifies the fractions.
 	return retfrac;
 }
 
-/*ostream &operator<<(ostream &os, const Fraction &b)
+ostream &operator<<(ostream &os, const Fraction &b)
 {
-	int frac = b.getNumerator() % b.getDenominator(), whole = b.getNumerator() / b.getDenominator();
+	int frac = b.numerator % b.denominator, whole = b.numerator / b.denominator;
 
 	if (whole != 0) //Mixed fraction
 	{
 		if (frac == 0)
 			cout << whole;
 		else
-			cout << whole << "  " << frac << "/" << b.getDenominator();
+			cout << whole << "  " << frac << "/" << b.denominator;
 	}
-	else if (b.getDenominator() == 0)
-		cout << b.getDenominator();
+	else if (b.numerator== 0)
+		cout << b.numerator;
 	else
-		cout << b.getDenominator() << "/" << b.getDenominator();
+		cout << b.numerator << "/" << b.denominator;
 
 	return os;
-}*/
-/*istream & operator>>(istream &is, Fraction &b)
+}
+istream & operator>>(istream &is, Fraction &b)
 {
-
-}*/
+	return is;
+}

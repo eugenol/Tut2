@@ -1,6 +1,10 @@
 #ifndef FRACTION_H
 #define FRACTION_H
 
+#include <iostream>
+
+using namespace std; //Omission of this line was causing the errors!
+
 class Fraction {
 private:
 	int numerator;
@@ -25,7 +29,7 @@ public:
 	Fraction operator*(Fraction &b);
 	Fraction operator/(Fraction &b);
 	
-	//friend ostream & operator<<(ostream &, const Fraction &);
-	//friend istream &operator>>(istream &, Fraction &);
+	friend ostream & operator<<(ostream &, const Fraction &);
+	friend istream &operator>>(istream &, Fraction &);
 };
 #endif
