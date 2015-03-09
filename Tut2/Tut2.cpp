@@ -13,7 +13,6 @@ Fraction readfraction(void);
 int main(int argc, char* argv[])
 {
 	Fraction frac1, frac2, res;
-	int temp;
 
 	cout << "Enter the fraction 1: ";
 	frac1 = readfraction();
@@ -26,22 +25,28 @@ int main(int argc, char* argv[])
 	res = frac1 + frac2;
 	cout << endl << "Fraction 1 + Fraction 2 = ";
 	res.print();
+	//cout << res;
 
 	res = frac1 - frac2;
 	cout << endl << "Fraction 1 - Fraction 2 = ";
 	res.print();
+	//cout << res;
 
 	res = frac1*frac2;
 	cout << endl << "Fraction 1 * Fraction 2 = ";
 	res.print();
+	//cout << res;
 
 	res = frac1 / frac2;
 	cout << endl << "Fraction 1 / Fraction 2 = ";
 	res.print();
+	//cout << res;
 	cout << endl;
 
 	return 0;
 }
+
+
 
 Fraction readfraction(void)
 {

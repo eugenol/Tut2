@@ -8,7 +8,7 @@ using namespace std;
 Fraction::Fraction() {
 	numerator = 0;
 	denominator = 1;
-};
+}
 
 //Destructor
 Fraction::~Fraction() {};
@@ -16,28 +16,28 @@ Fraction::~Fraction() {};
 void Fraction::setNumerator(int num) 
 {
 	numerator = num;
-};
+}
 
 void Fraction::setDenominator(int den) 
 {
 	denominator = den;
-};
+}
 
 int Fraction::getNumerator(void) 
 {
 	return numerator;
-};
+}
 
 int Fraction::getDenominator(void) 
 {
 	return denominator;
-};
+}
 
 void Fraction::setFraction(int num, int den) 
 {
 	setNumerator(num);
 	setDenominator(den);
-};
+}
 
 void Fraction::print(void)
 {
@@ -53,7 +53,7 @@ void Fraction::print(void)
 		cout << numerator;
 	else
 		cout << numerator << "/" << denominator;
-};
+}
 
 Fraction Fraction::operator+(Fraction &b) 
 {
@@ -64,7 +64,7 @@ Fraction Fraction::operator+(Fraction &b)
 	result = pretty(result); //neaten up the fraction
 
 	return result;
-};
+}
 
 Fraction Fraction::operator-(Fraction &b) 
 {
@@ -75,7 +75,7 @@ Fraction Fraction::operator-(Fraction &b)
 	result = pretty(result); //neaten up the fraction
 
 	return result;
-};
+}
 
 Fraction Fraction::operator*(Fraction &b) 
 {
@@ -86,7 +86,7 @@ Fraction Fraction::operator*(Fraction &b)
 	result = pretty(result); //neaten up the fraction
 
 	return result;
-};
+}
 
 Fraction Fraction::operator/(Fraction &b) 
 {
@@ -97,7 +97,7 @@ Fraction Fraction::operator/(Fraction &b)
 	result = pretty(result); //neaten up the fraction
 
 	return result;
-};
+}
 
 int Fraction::gcd(int a, int b) //find the greatest common divisor, used in pretty to clean up the fractions
 {
@@ -136,3 +136,26 @@ Fraction Fraction::pretty(Fraction &Temp) // simplifies the fractions.
 
 	return retfrac;
 }
+
+/*ostream &operator<<(ostream &os, const Fraction &b)
+{
+	int frac = b.getNumerator() % b.getDenominator(), whole = b.getNumerator() / b.getDenominator();
+
+	if (whole != 0) //Mixed fraction
+	{
+		if (frac == 0)
+			cout << whole;
+		else
+			cout << whole << "  " << frac << "/" << b.getDenominator();
+	}
+	else if (b.getDenominator() == 0)
+		cout << b.getDenominator();
+	else
+		cout << b.getDenominator() << "/" << b.getDenominator();
+
+	return os;
+}*/
+/*istream & operator>>(istream &is, Fraction &b)
+{
+
+}*/
