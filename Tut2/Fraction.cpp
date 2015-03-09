@@ -157,26 +157,21 @@ ostream &operator<<(ostream &os, const Fraction &b)
 }
 istream & operator>>(istream &is, Fraction &b)
 {
-	/*
-	int whole, numerator, denominator;
-	cin >> whole >> numerator >> denominator;
-	b.numerator = whole*denominator + numerator;
-	b.denominator = denominator;
-	*/
-	char slash = 0;
+	char slash = 0, temp;
 	int whole = 0, num = 0, den = 1;
-	cin >> whole >> slash;
-	if (slash == '/')
+	cin >> whole;
+	cin.get(temp);
+	if (temp == '/')
 	{
 		cin >> den;
 		num = whole;
 	}
-	else if (slash == ' ')
+	else if (temp == ' ')
 	{
 		cin >> num >> slash >> den;
-		num += whole;
+		num += whole*den;
 	}
-	else if (slash == '\n')
+	else if (temp == '\n')
 		num = whole;
 
 	b.numerator = num;
