@@ -1,7 +1,7 @@
 #ifndef FRACTION_H
 #define FRACTION_H
 
-#include <iostream>
+//#include <iostream>
 
 using namespace std; //Omission of this line was causing the errors! Some people say use std::ostream etc.. instead of using namespace std.
 

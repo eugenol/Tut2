@@ -14,35 +14,28 @@ int main(int argc, char* argv[])
 	Fraction frac1, frac2, res;
 
 	cout << "Enter the fraction 1: ";
-	//frac1 = readfraction();
 	cin >> frac1;
 
 	cout << "Enter the fraction 2: ";
-	//frac2 = readfraction();
 	cin >> frac2;
 
 	//run test cases with +,-,*,/ operators
 
 	res = frac1 + frac2;
 	cout << endl << "Fraction 1 + Fraction 2 = ";
-	//res.print();
-	cout << res;
+	cout << res << endl;
 
 	res = frac1 - frac2;
-	cout << endl << "Fraction 1 - Fraction 2 = ";
-	//res.print();
-	cout << res;
+	cout << "Fraction 1 - Fraction 2 = ";
+	cout << res << endl;
 
 	res = frac1*frac2;
-	cout << endl << "Fraction 1 * Fraction 2 = ";
-	//res.print();
-	cout << res;
+	cout << "Fraction 1 * Fraction 2 = ";
+	cout << res<<endl;
 
 	res = frac1 / frac2;
-	cout << endl << "Fraction 1 / Fraction 2 = ";
-	//res.print();
-	cout << res;
-	cout << endl;
+	cout << "Fraction 1 / Fraction 2 = ";
+	cout << res<<endl;
 
 	return 0;
 }
