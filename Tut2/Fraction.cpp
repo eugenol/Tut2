@@ -39,22 +39,6 @@ void Fraction::setFraction(int num, int den)
 	setDenominator(den);
 }
 
-void Fraction::print()
-{
-	int frac = numerator % denominator, whole = numerator / denominator;
-	if (whole != 0) //Mixed fraction
-	{
-		if (frac == 0)
-			cout << whole;
-		else
-			cout << whole << "  " << frac << "/" << denominator;
-	}
-	else if (numerator == 0)
-		cout << numerator;
-	else
-		cout << numerator << "/" << denominator;
-}
-
 Fraction Fraction::operator+(Fraction &b) 
 {
 	Fraction result;
