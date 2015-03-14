@@ -83,6 +83,14 @@ Fraction Fraction::operator/(Fraction &b)
 	return result;
 }
 
+// Is this neccessary? It worked without it.
+Fraction Fraction::operator=(Fraction &b)
+{
+	numerator = b.numerator;
+	denominator = b.denominator;
+	return *this;
+}
+
 int Fraction::gcd(int a, int b) //find the greatest common divisor, used in pretty to clean up the fractions
 {
 	//if (b == 0) return a;
