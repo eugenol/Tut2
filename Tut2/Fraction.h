@@ -29,7 +29,7 @@ public:
 	Fraction operator/(Fraction &b);
 	Fraction operator=(Fraction &b);
 	
-	friend ostream & operator<<(ostream &, const Fraction &);
+	friend ostream &operator<<(ostream &, const Fraction &);
 	friend istream &operator>>(istream &, Fraction &);
 };
 #endif
