@@ -45,7 +45,6 @@ Fraction Fraction::operator+(Fraction &b)
 
 	result.numerator = numerator*b.denominator + denominator*b.numerator;
 	result.denominator = denominator*b.denominator;
-	result = pretty(result); //neaten up the fraction
 
 	return result;
 }
@@ -56,7 +55,6 @@ Fraction Fraction::operator-(Fraction &b)
 
 	result.numerator = numerator*b.denominator - denominator*b.numerator;
 	result.denominator = denominator*b.denominator;
-	result = pretty(result); //neaten up the fraction
 
 	return result;
 }
@@ -67,7 +65,6 @@ Fraction Fraction::operator*(Fraction &b)
 
 	result.numerator = numerator*b.numerator;
 	result.denominator = denominator*b.denominator;
-	result = pretty(result); //neaten up the fraction
 
 	return result;
 }
@@ -78,7 +75,6 @@ Fraction Fraction::operator/(Fraction &b)
 
 	result.numerator = numerator*b.denominator;
 	result.denominator = denominator*b.numerator;
-	result = pretty(result); //neaten up the fraction
 
 	return result;
 }
@@ -106,19 +102,19 @@ int Fraction::gcd(int a, int b) //find the greatest common divisor, used in pret
 	return temp;
 }
 
-Fraction Fraction::pretty(Fraction &Temp) // simplifies the fractions.
+Fraction Fraction::pretty() // simplifies the fractions.
 {
 	Fraction retfrac;
 
-	int a = Temp.numerator, b = Temp.denominator;
+	int a = numerator, b = denominator;
 
 	a = a >= 0 ? a : -a;
 	b = b >= 0 ? b : -b;
 
 	int div = gcd(a, b);
 	
-	retfrac.numerator = Temp.numerator / div;
-	retfrac.denominator = Temp.denominator / div;
+	retfrac.numerator = numerator / div;
+	retfrac.denominator = denominator / div;
 	
 	if(retfrac.denominator < 0)
 	{
@@ -131,19 +127,27 @@ Fraction Fraction::pretty(Fraction &Temp) // simplifies the fractions.
 
 ostream &operator<<(ostream &os, const Fraction &b)
 {
-	int frac = b.numerator % b.denominator, whole = b.numerator / b.denominator;
-
-	if (whole != 0) //Mixed fraction
+	if (b.denominator != 0) // ugly fix for now, avoid dividing by zero.
 	{
-		if (frac == 0)
-			cout << whole;
+		Fraction reduced = b;
+		reduced = reduced.pretty();
+
+		int frac = reduced.numerator % reduced.denominator, whole = reduced.numerator / reduced.denominator;
+
+		if (whole != 0) //Mixed fraction
+		{
+			if (frac == 0)
+				cout << whole;
+			else
+				cout << whole << "  " << frac << "/" << reduced.denominator;
+		}
+		else if (reduced.numerator == 0)
+			cout << reduced.numerator;
 		else
-			cout << whole << "  " << frac << "/" << b.denominator;
+			cout << reduced.numerator << "/" << reduced.denominator;
 	}
-	else if (b.numerator== 0)
-		cout << b.numerator;
 	else
-		cout << b.numerator << "/" << b.denominator;
+		cout << "Error. Division by zero has occurred!";
 
 	return os;
 }
@@ -157,11 +161,15 @@ istream & operator>>(istream &is, Fraction &b)
 	{
 		cin >> den;
 		num = whole;
+		if (den == 0)
+			is.setstate(ios::failbit); // error if denominator is zero.
 	}
 	else if (temp == ' ')
 	{
 		cin >> num >> slash >> den;
 		num += whole*den;
+		if (den == 0)
+			is.setstate(ios::failbit); // error if denominator is zero.
 	}
 	else if (temp == '\n')
 		num = whole;

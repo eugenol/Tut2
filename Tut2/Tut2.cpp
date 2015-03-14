@@ -13,11 +13,30 @@ int main(int argc, char* argv[])
 {
 	Fraction frac1, frac2, res;
 
-	cout << "Enter the fraction 1: ";
+	cout << "Enter fraction 1: ";
 	cin >> frac1;
+	// Loop until the fraction is read in correctly.
+	while (cin.fail())
+	{
+		cout << "Error: Can not have zero in the denominator" << std::endl;
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Enter fraction 1: ";
+		cin >> frac1;
+	}
 
-	cout << "Enter the fraction 2: ";
+
+	cout << "Enter fraction 2: ";
 	cin >> frac2;
+	// Loop until the fraction is read in correctly.
+	while (cin.fail())
+	{
+		cout << "Error: Can not have zero in the denominator" << std::endl;
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Enter fraction 2: ";
+		cin >> frac2;
+	}
 
 	//run test cases with +,-,*,/ operators
 

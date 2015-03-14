@@ -11,7 +11,7 @@ private:
 	int denominator;
 
 	int gcd(int a, int b);
-	Fraction pretty(Fraction &Temp);
+	Fraction  pretty();
 
 public:
 	Fraction();
