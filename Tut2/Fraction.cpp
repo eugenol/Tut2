@@ -39,6 +39,46 @@ void Fraction::setFraction(int num, int den)
 	setDenominator(den);
 }
 
+Fraction Fraction::add(Fraction &b)
+{
+	Fraction result;
+
+	result.numerator = numerator*b.denominator + denominator*b.numerator;
+	result.denominator = denominator*b.denominator;
+
+	return result;
+}
+
+Fraction Fraction::subtract(Fraction &b)
+{
+	Fraction result;
+
+	result.numerator = numerator*b.denominator - denominator*b.numerator;
+	result.denominator = denominator*b.denominator;
+
+	return result;
+}
+
+Fraction Fraction::multiply(Fraction &b)
+{
+	Fraction result;
+
+	result.numerator = numerator*b.numerator;
+	result.denominator = denominator*b.denominator;
+
+	return result;
+}
+
+Fraction Fraction::divide(Fraction &b)
+{
+	Fraction result;
+
+	result.numerator = numerator*b.denominator;
+	result.denominator = denominator*b.numerator;
+
+	return result;
+}
+
 Fraction Fraction::operator+(Fraction &b) 
 {
 	Fraction result;

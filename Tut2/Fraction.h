@@ -23,6 +23,11 @@ public:
 	int getDenominator();
 	void setFraction(int num, int den);
 
+	Fraction add(Fraction &b);
+	Fraction subtract(Fraction &b);
+	Fraction multiply(Fraction &b);
+	Fraction divide(Fraction &b);
+
 	Fraction operator+(Fraction &b);
 	Fraction operator-(Fraction &b);
 	Fraction operator*(Fraction &b);
