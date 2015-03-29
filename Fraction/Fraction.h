@@ -16,7 +16,6 @@
 #include <iostream>
 
 // This class is exported from the Fraction.dll
-
 class FRACTION_API Fraction {
 private:
 	int numerator;
@@ -46,8 +45,9 @@ public:
 	Fraction operator/(Fraction &b);
 	Fraction operator=(Fraction &b);
 
-	extern friend std::ostream &operator<<(std::ostream &, const Fraction &);
-	extern friend std::istream &operator>>(std::istream &, Fraction &);
+	// adding FRACTION_API solved the linking issue
+	FRACTION_API friend std::ostream &operator<<(std::ostream &, const Fraction &);
+	FRACTION_API friend std::istream &operator>>(std::istream &, Fraction &);
 };
 #endif
 

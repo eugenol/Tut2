@@ -16,7 +16,6 @@
 
 using namespace std;
 
-
 //Constructor
 Fraction::Fraction() {
 	numerator = 0;
@@ -178,7 +177,7 @@ Fraction Fraction::pretty() // simplifies the fractions.
 	return retfrac;
 }
 
-extern ostream &operator<<(ostream &os, const Fraction &b)
+FRACTION_API ostream &operator<<(ostream &os, const Fraction &b)
 {
 	if (b.denominator != 0) // ugly fix for now, avoid dividing by zero.
 	{
@@ -205,12 +204,12 @@ extern ostream &operator<<(ostream &os, const Fraction &b)
 	return os;
 }
 
-extern istream & operator>>(istream &is, Fraction &b)
+FRACTION_API istream & operator>>(istream &is, Fraction &b)
 {
 	char slash = 0, temp;
 	int whole = 0, num = 0, den = 1;
-	cin >> whole;
-	cin.get(temp);
+	std::cin >> whole;
+	std::cin.get(temp);
 	if (temp == '/')
 	{
 		cin >> den;
