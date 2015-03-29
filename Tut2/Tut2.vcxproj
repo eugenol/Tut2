@@ -81,11 +81,12 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Fraction.h" />
+    <ClCompile Include="Tut2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Fraction.cpp" />
-    <ClCompile Include="Tut2.cpp" />
+    <ProjectReference Include="..\Fraction\Fraction.vcxproj">
+      <Project>{9fd16bbc-c68c-4cf8-9198-dbe4059654ab}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

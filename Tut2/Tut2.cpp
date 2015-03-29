@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "Fraction.h"
+#include "../Fraction/Fraction.h"
 
 using namespace std;
 
