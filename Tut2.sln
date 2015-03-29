@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tut2", "Tut2\Tut2.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fraction", "Fraction\Fraction.vcxproj", "{9FD16BBC-C68C-4CF8-9198-DBE4059654AB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcxproj", "{273B4BD4-3469-4981-A3E4-3D278F8A340B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{9FD16BBC-C68C-4CF8-9198-DBE4059654AB}.Debug|Win32.Build.0 = Debug|Win32
 		{9FD16BBC-C68C-4CF8-9198-DBE4059654AB}.Release|Win32.ActiveCfg = Release|Win32
 		{9FD16BBC-C68C-4CF8-9198-DBE4059654AB}.Release|Win32.Build.0 = Release|Win32
+		{273B4BD4-3469-4981-A3E4-3D278F8A340B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{273B4BD4-3469-4981-A3E4-3D278F8A340B}.Debug|Win32.Build.0 = Debug|Win32
+		{273B4BD4-3469-4981-A3E4-3D278F8A340B}.Release|Win32.ActiveCfg = Release|Win32
+		{273B4BD4-3469-4981-A3E4-3D278F8A340B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
